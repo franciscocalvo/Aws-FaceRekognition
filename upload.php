@@ -32,7 +32,7 @@ if ($type === "image/png" or $type === "image/jpeg") {
     
     if(move_uploaded_file($tmp_name, $uploadedFile)) {
         uploadFileToBucket($uploadedFile,$nameExtension);
-        header('Location: https://informatica.ieszaidinvergeles.org:10048/pia/upload/Aws-FaceRekognition/ejemplo2.php?file='. $uploadedFile . '&name=' . $nameExtension);
+        header('Location: https://informatica.ieszaidinvergeles.org:10048/pia/upload/Aws-FaceRekognition/preSelection.php?file='. $uploadedFile . '&name=' . $nameExtension);
         exit;
         return [$uploadedFile, $uniqueName . '.' . $extension, $uniqueName, $extension];
         
@@ -70,46 +70,5 @@ function uploadFileToBucket($file, $key) {
     }
     return $result;
 }
-
-
-
-
-
-
-
-/*function BucektConecction($nombreUnico, $extension){
-    
-    $s3Client = new S3Client([
-        'version' => 'latest',
-        'region'  => 'us-east-1',
-        'credentials' => [
-            'key'    => $_ENV['aws_access_key_id'],
-            'secret' => $_ENV['aws_secret_access_key'],
-            'token' => $_ENV['aws_session_token']
-        ]
-        ]);
-            
-            
-        $bucket = 'aws-bucket-facerekognition';
-        $file_Path = 'originales/'.$nombreUnico . '.' . $extension;
-        $key = basename($file_Path);
-            
-        try {
-            $result = $s3Client->putObject([
-                'Bucket' => $bucket,
-                'Key'    => $key,
-                'Body'   => fopen($file_Path, 'r')
-                //'ACL'    => 'public-read', // make file 'public'(sólo funciona si el bucket permite insercción de ACL)
-                ]);
-                echo "Image uploaded successfully. Image path is: ". $result->get('ObjectURL');
-        } catch (Aws\S3\Exception\S3Exception $e) {
-            echo "There was an error uploading the file.\n";
-            echo $e->getMessage();
-        }
-    
-}*/
-
-
-
 
 ?>
