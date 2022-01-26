@@ -1,0 +1,23 @@
+.center{
+    
+    margin: auto;
+    
+    border: 3px solid green;
+    text-align: center;
+    background-color: inherit;
+}
+
+body{
+    background-image:url("camera.jpg");
+}
+
+
+
+
+
+
+
+
+
+
+

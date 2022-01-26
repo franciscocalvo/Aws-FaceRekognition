@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <title>Face Detector</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
 
 </head>
 <body>
     
-    <p>Subir imagen</p>
-    <form action="upload.php" method="POST" enctype="multipart/form-data">
+    <h1 class="display-1 center" >Face-Detector</h1>
+    <form action="upload.php" method="POST" enctype="multipart/form-data" class="center">
       <input type="file" name="archivo" id="archivo">
-      <input type="submit" value="Subir">
+      <input type="submit" value="Subir" class="cybr-btn">
     </form>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
